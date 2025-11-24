@@ -1,42 +1,73 @@
-⚙️ README do Projeto Final - RH Avançado (UC 607)
-Este documento apresenta o projeto RH Avançado, uma aplicação de console desenvolvida em C++ para a Unidade Curricular 607, focada na gestão de recursos humanos, controle de assiduidade, férias e desenvolvimento profissional de colaboradores.
+# RH AVANÇADO - Gestão de Recursos Humanos Diogo Simões (UC 607)
 
+> Uma aplicação de console em C++ focada na gestão eficiente de colaboradores, marcação de ausências (Férias/Faltas), e análise de dados para o Projeto Final da Unidade Curricular 607.
 
-🚀 Visão Geral do Projeto
-RH Avançado é um sistema completo de gestão de colaboradores, projetado para facilitar o registo, marcação e análise das ausências (férias e faltas) numa empresa. O sistema inclui funcionalidades de gestão de dados pessoais, cursos/formações, observações, e geração de diversos relatórios e dashboards.
+---
 
-💻 Tecnologia
-Linguagem de Programação: C++ (Console Application).
+## Detalhes Técnicos
 
-Ambiente de Desenvolvimento: Visual Studio 2026 (Utilizado para desenvolvimento e compilação do projeto).
-Persistência de Dados: Os dados são guardados e carregados localmente num ficheiro (data_rh.txt).
-Segurança: Nomes e dados sensíveis dos colaboradores e cursos são cifrados (Cifra de César) antes de serem guardados no ficheiro, garantindo uma camada básica de segurança dos dados.
+| Componente | Detalhe |
+| :--- | :--- |
+| **Linguagem** | C++ |
+| **IDE** | **Visual Studio 2026** |
+| **Tipo de Aplicação** | Console |
+| **Persistência** | Ficheiro Local (`data_rh.txt`) |
+| **Segurança** | Cifragem de Dados Sensíveis (Cifra de César) |
 
-✨ Funcionalidades Principais
-O projeto oferece um menu principal robusto com as seguintes opções:
+---
 
-1. Gestão de Colaboradores
-Listar Colaboradores: Exibe todos os colaboradores com respetivo ID, nome e departamento.
-Adicionar Colaborador: Permite adicionar novos colaboradores com verificação de nomes duplicados.
-Buscar Colaborador: Procura um colaborador por ID ou nome (parcial) e exibe os seus detalhes e o calendário do mês atual.
+## Funcionalidades Principais
 
-2. Gestão de Marcações (Férias e Faltas)
-Marcar Férias ('F') e Faltas ('X'): Permite registar ausências por dia com validação da data (formato YYYY-MM-DD).
-Verificação de Conflito: Ao marcar férias, o sistema avisa se já existir outro colega do mesmo departamento de férias nessa data, permitindo ao utilizador confirmar ou cancelar a marcação.
-Não é permitido marcar em Fins de Semana.
-Dismarcar: Remove uma marcação existente.
-Visualizar Calendário: Imprime o calendário mensal de um colaborador com as marcações visíveis (F=Férias, X=Falta, *=Fim de Semana).
+O sistema oferece um menu principal robusto para diversas tarefas administrativas.
 
-3. Gestão de Recursos
-Gerir Formações/Cursos: Interface dedicada para adicionar, listar, editar e remover cursos concluídos por um colaborador.
-Gerir Notas/Observações: Interface para adicionar, listar, editar e remover notas internas ou observações sobre o colaborador.
+### 1. Gestão de Colaboradores
 
-4. Relatórios e Estatísticas
-Relatórios Mensais: Gera uma lista detalhada das Férias e Faltas de cada colaborador para um mês específico.
-Estatísticas por Departamento: Agrega o total de Férias e Faltas por departamento para o mês, e identifica o departamento com o maior número de ausências.
-Dashboard Resumido: Apresenta um resumo anual/mensal por colaborador, mostrando as Férias tiradas no ano, as Faltas no mês e o saldo de Dias de Férias Restantes (com base num limite anual configurável).
+* **Listagem Completa:** Exibe todos os colaboradores (ID, Nome, Departamento).
+* **Registo:** Adiciona novos colaboradores com verificação de nomes duplicados.
+* **Pesquisa Detalhada:** Busca por ID ou nome e mostra todos os detalhes e o calendário mensal.
 
-5. Exportação de Dados
-Exportar Relatório (TXT/CSV): Permite exportar os mapas de marcações para um ficheiro de texto, ideal para ser aberto em programas como o Bloco de Notas ou Excel (como CSV).
-Exportação de calendário de um Colaborador (mensal).
-Exportação do mapa de marcações de um Departamento (mensal) ou de Todos os departamentos.
+###  2. Marcações de Ausência
+
+Controlo rigoroso da assiduidade, impedindo marcações em Fins de Semana.
+
+* **Marcar Férias ('F'):** Regista dias de férias.
+    > **Destaque:** Inclui verificação de **conflito de departamento**, alertando se houver colegas de férias no mesmo dia.
+* **Marcar Faltas ('X'):** Registo de ausências.
+* **Desmarcar:** Remove uma marcação existente.
+* **Visualização:** Imprime o calendário mensal de um colaborador com todas as marcações.
+
+### 3. Recursos & Desenvolvimento
+
+Gerencie o perfil profissional e observações dos colaboradores.
+
+* **Formações/Cursos:** Adicionar, editar e listar cursos concluídos.
+* **Notas/Observações:** Adicionar e gerir notas internas e observações sobre o colaborador.
+
+### 4. Relatórios e Análise de Dados
+
+Extraia informações vitais para a tomada de decisões.
+
+* **Relatórios Mensais:** Detalhes de Férias e Faltas para um mês/ano específico.
+* **Estatísticas de Departamento:** Agrega os dados por departamento e identifica áreas com maior número de ausências.
+* **Dashboard Resumido:** Apresenta o saldo de **Dias de Férias Restantes** e estatísticas anuais/mensais.
+
+### 5. Exportação de Dados
+
+* **Exportar Relatório (TXT/CSV):** Permite exportar mapas de marcações (individual ou por departamento) para análise externa.
+
+---
+
+## Como Colocar o Projeto a Correr
+
+### Pré-requisitos
+
+* **IDE:** **Visual Studio 2026** instalado.
+* Compilador C++ compatível (MSVC).
+
+### ⚙️ Compilação e Execução
+
+1.  **Abrir:** Carregue a solução do projeto (`.sln`) no Visual Studio 2026.
+2.  **Compilar:** Utilize a opção `Build` ou atalho `F7`.
+3.  **Executar:** Inicie o projeto (`Debug > Start Debugging` ou `F5`).
+
+> O sistema carrega os dados automaticamente do ficheiro `data_rh.txt` no arranque e guarda-os ao sair (Opção **0**).
